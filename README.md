@@ -2,7 +2,7 @@
 
 ## 🎥 Demo Video
 
-[Click here to watch the demo](ttps://drive.google.com/file/d/1vCIu1z3-E8s1Qd9XZmaL1hNef4NIbaqR/view?usp=sharing)
+[Click here to watch the demo](https://drive.google.com/file/d/1vCIu1z3-E8s1Qd9XZmaL1hNef4NIbaqR/view?usp=sharing)
 
 
 This project is a Django-based web application built to collect feedback from prospective students following their campus visits to George Mason University.
