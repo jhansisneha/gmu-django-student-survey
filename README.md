@@ -40,20 +40,24 @@ It includes a custom survey form, template rendering, database integration using
 ```bash
 git clone https://github.com/jhansisneha/gmu-django-student-survey.git
 cd gmu-django-student-survey
-
+```
 2. **Create Virtual Environment**
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
+```
 3. **Install dependencies**
+```bash
 pip install django
-
+```
 4. **Run migrations**
+```bash   
 python manage.py migrate
-
+```
 5. **Start the development server**
+```bash
 python manage.py runserver
-
+```
 ## Future Enhancements
 - Add deployment to Heroku, Render, or AWS
 - Switch database to PostgreSQL or MySQL
