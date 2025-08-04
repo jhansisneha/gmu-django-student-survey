@@ -30,3 +30,33 @@ It includes a custom survey form, template rendering, database integration using
 | Templates    | Django Templates (HTML/CSS) |
 | Forms        | Django Forms                |
 | Admin Panel  | Django Admin Interface      |
+
+
+---
+
+## Setup Instructions
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/jhansisneha/gmu-django-student-survey.git
+cd gmu-django-student-survey
+
+2. **Create Virtual Environment**
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+3. **Install dependencies**
+pip install django
+
+4. **Run migrations**
+python manage.py migrate
+
+5. **Start the development server**
+python manage.py runserver
+
+## Future Enhancements
+- Add deployment to Heroku, Render, or AWS
+- Switch database to PostgreSQL or MySQL
+- Add REST API endpoints using Django REST Framework
+- Add email notifications on form submission
+- Add CSV export or analytics dashboard
