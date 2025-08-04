@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Surveys - GMU Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <style>
+        body {
+            background-image: url("{% static 'images/main_bg.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        .card-header h3 {
+            margin: 0;
+        }
+        .logo-img {
+            height: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header bg-success text-white">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <img src="{% static 'images/GMU_Logo_2.png' %}" alt="GMU Logo" class="logo-img">
+                        <h3 class="mb-0">All Surveys</h3>
+                    </div>
+                    <a href="/" class="btn btn-outline-light btn-sm">Home</a>
+                </div>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-bordered table-hover text-center align-middle text-nowrap" style="min-width: 1200px;">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Street</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip</th>
+                            <th>Phone</th>
+                            <th>Survey Date</th>
+                            <th>Liked Most</th>
+                            <th>Source</th>
+                            <th>Likelihood</th>
+                            <th style="min-width: 200px;">Comments</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for survey in surveys %}
+                        <tr>
+                            <td>{{ survey.first_name }} {{ survey.last_name }}</td>
+                            <td>{{ survey.email }}</td>
+                            <td style="white-space: normal;">{{ survey.street_address }}</td>
+                            <td>{{ survey.city }}</td>
+                            <td>{{ survey.state }}</td>
+                            <td>{{ survey.zip_code }}</td>
+                            <td>{{ survey.telephone_number }}</td>
+                            <td>{{ survey.date_of_survey }}</td>
+							<td>{{ survey.liked_most|join:", " }}</td>
+                            <td>{{ survey.source_of_interest }}</td>
+                            <td>{{ survey.likelihood }}</td>
+                            <td style="white-space: normal;">{{ survey.comments }}</td>
+                            <td>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="/survey/update/{{ survey.id }}/" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="/survey/delete/{{ survey.id }}/" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="13" class="text-muted">No surveys available.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
